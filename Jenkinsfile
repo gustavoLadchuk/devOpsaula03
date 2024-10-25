@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh '''
 		python3 -m venv devops
-		source devops/bin/activate
+		. devops/bin/activate
 		pip install flask
 		pip install flask flask-cors
 		'''
@@ -14,6 +14,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
+		. devops/bin/activate
 		python3 main.py --host=0.0.0.0
 		'''
             }
