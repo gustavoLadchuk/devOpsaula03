@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
 		. devops/bin/activate
-		python3 main.py --host=0.0.0.0
+		nohup python3 main.py --host=0.0.0.0
 		'''
             }
         }
