@@ -15,7 +15,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh python3 main.py --host=0.0.0.0
+                sh '''
+		python3 main.py --host=0.0.0.0
+		'''
             }
         }
     }
