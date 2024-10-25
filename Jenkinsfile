@@ -4,8 +4,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-		sudo apt update
-		sudo apt install python3
 		python -m venv devops
 		source devops/bin/activate
 		pip install flask
